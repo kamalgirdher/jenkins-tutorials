@@ -11,6 +11,8 @@
     Dashboard > New Item > Pipeline
     Definition = Pipeline script
     Enter script
+    
+    Windows
     ```
     pipeline {
        agent any
@@ -24,6 +26,19 @@
     }
     ```
 
+    Linux
+    ```
+    pipeline {
+       agent any
+        stages {
+            stage('build') {
+                steps {
+                    sh 'python -V'
+                }
+            }
+        }
+    }
+    ```
 
 
 4. JENKINSFILE using SCM
@@ -35,7 +50,7 @@
     Specify branch
     Script Path = JENKINSFILE
 
-    JENKINSFILE
+    Windows
     ```
     pipeline {
        agent any
@@ -43,6 +58,20 @@
             stage('build') {
                 steps {
                     bat 'python -V'
+                }
+            }
+        }
+    }
+    ```
+
+    Linux
+    ```
+    pipeline {
+       agent any
+        stages {
+            stage('build') {
+                steps {
+                    sh 'python -V'
                 }
             }
         }
