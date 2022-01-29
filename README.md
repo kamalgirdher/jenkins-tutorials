@@ -48,7 +48,7 @@
     Enter github repo
     Credentials
     Specify branch
-    Script Path = JENKINSFILE
+    Script Path = JENKINSFILE1
 
     Windows
     ```
@@ -77,3 +77,5 @@
         }
     }
     ```
+
+5. 
