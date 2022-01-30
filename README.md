@@ -14,14 +14,13 @@ Youtube : https://www.youtube.com/c/xtremeexcel
 
         a. Go to Manage Jenkins and then click on Manage Plugins.
 
-![manage_jenkins](/images/manage_jenkins.png)
+<img src="/images/manage_jenkins.png" width="60%" height="60%">
 
         b. Install git and github plugins and restart jenkins.
 
-![git_plugin](/images/git_plugin.png)
+<img src="/images/git_plugin.png" width="60%" height="60%">
 
-![github_plugin](/images/github_plugin.png)
-
+<img src="/images/github_plugin.png" width="60%" height="60%">
 
 
 3. Pipeline using Pipeline script
