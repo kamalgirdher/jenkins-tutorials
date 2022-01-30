@@ -14,13 +14,13 @@ Youtube : https://www.youtube.com/c/xtremeexcel
 
         a. Go to Manage Jenkins and then click on Manage Plugins.
 
-            ![manage_jenkins](manage_jenkins.png)
+            ![manage_jenkins](/images/manage_jenkins.png)
 
         b. Install git and github plugins and restart jenkins.
 
-            ![git_plugin](git_plugin.png)
+            ![git_plugin](/images/git_plugin.png)
 
-            ![github_plugin](github_plugin.png)
+            ![github_plugin](/images/github_plugin.png)
 
 
 
