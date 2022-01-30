@@ -1,12 +1,6 @@
 # Tutorial 3. Pipeline using Pipeline script
 
 
-<p align="center">
-<a href="https://www.youtube.com/c/xtremeexcel?sub_confirmation=1"><img src="/images/subscribe.gif" width="30%" height="30%"></a>
-</p>
-
-
-
 Dashboard > New Item > Pipeline
 
 <p align="left">
@@ -55,4 +49,9 @@ Output:
 
 <p align="left">
 <img src="/images/first_pipeline_script_output.png" width="60%" height="60%">
+</p>
+
+
+<p align="center">
+<a href="https://www.youtube.com/c/xtremeexcel?sub_confirmation=1"><img src="/images/subscribe.gif" width="25%" height="25%"></a>
 </p>

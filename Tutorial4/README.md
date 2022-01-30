@@ -1,9 +1,5 @@
 Tutorial 4. JENKINSFILE using SCM
 
-<p align="center">
-<a href="https://www.youtube.com/c/xtremeexcel?sub_confirmation=1"><img src="/images/subscribe.gif" width="30%" height="30%"></a>
-</p>
-
 Dashboard > New Item > Pipeline
 Pipeline script from SCM
 Enter github repo
@@ -38,3 +34,8 @@ Script Path = JENKINSFILE1
         }
     }
     ```
+
+
+<p align="center">
+<a href="https://www.youtube.com/c/xtremeexcel?sub_confirmation=1"><img src="/images/subscribe.gif" width="25%" height="25%"></a>
+</p>

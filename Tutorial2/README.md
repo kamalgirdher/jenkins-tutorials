@@ -1,10 +1,5 @@
 # Tutorial 2. Github account, github plugin, github token
 
-<p align="center">
-<a href="https://www.youtube.com/c/xtremeexcel?sub_confirmation=1"><img src="/images/subscribe.gif" width="30%" height="30%"></a>
-</p>
-
-
 If you don't have a github account, then visit https://github.com/signup and create an account.
 
 If you are not having Github plugins installed on Jenkins, then follow these steps
@@ -45,4 +40,8 @@ If you have not created a token for github authentication before, follow the ste
     d. Go to credentials manager in Jenkins and add username and token for authentication.
 <p align="center">
 <img src="/images/github_credentials.png" width="60%" height="60%">
+</p>
+
+<p align="center">
+<a href="https://www.youtube.com/c/xtremeexcel?sub_confirmation=1"><img src="/images/subscribe.gif" width="25%" height="25%"></a>
 </p>
