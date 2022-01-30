@@ -5,7 +5,23 @@ Youtube : https://www.youtube.com/c/xtremeexcel
 1. Jenkins installation
 
 
+
 2. Github account, github plugin, github token
+
+    If you don't have a github account, then visit https://github.com/signup and create an account.
+
+    If you are not having Github plugins installed on Jenkins, then follow these steps
+
+        a. Go to Manage Jenkins and then click on Manage Plugins.
+
+            ![manage_jenkins](manage_jenkins.png)
+
+        b. Install git and github plugins and restart jenkins.
+
+            ![git_plugin](git_plugin.png)
+
+            ![github_plugin](github_plugin.png)
+
 
 
 3. Pipeline using Pipeline script
