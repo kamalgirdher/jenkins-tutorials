@@ -1,6 +1,9 @@
 # jenkins-tutorials
 
-Youtube : https://www.youtube.com/c/xtremeexcel
+**Subscribe to my channel on Youtube ::**  https://www.youtube.com/c/xtremeexcel?sub_confirmation=1
+
+<img src="/images/journey.png" width="40%" height="40%">
+
 
 [Tutorial 1. Jenkins installation](/Tutorial1/README.md)
 
@@ -17,3 +20,18 @@ Youtube : https://www.youtube.com/c/xtremeexcel
 [Tutorial 7. Blue ocean](/Tutorial7/README.md)
 
 [Tutorial 8. Parallel steps in a stage](/Tutorial8/README.md)
+
+
+**ABOUT THE AUTHOR**
+
+![Kamal](images/kamal.png)
+
+Kamal Girdher is a Lead automation architect, with rich experience on automation of web, mobile and web service applications. He is a Youtuber, blogger and therefore passionate about teaching thousands of people all over the world.
+
+https://www.youtube.com/c/xtremeExcel
+
+https://www.linkedin.com/in/kamal-girdher-08691932/
+
+http://megettingerror.blogspot.in/
+
+http://exceltalk.blogspot.in/
