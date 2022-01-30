@@ -34,7 +34,7 @@ Youtube : https://www.youtube.com/c/xtremeexcel
         a. Go to settings.
 
 <p align="center">
-<img src="/images/settings.png" width="70%" height="70%">
+<img src="/images/settings.png" width="30%" height="30%">
 </p>
 
         b. Click on Developer Settings.
@@ -43,10 +43,13 @@ Youtube : https://www.youtube.com/c/xtremeexcel
 <img src="/images/developer_settings.png" width="30%" height="30%">
 </p>
 
-
         c. Click on Personal Access token. Then click on Generate new token. Copy the token and save it somewhere for future reference.
 
         d. Go to credentials manager in Jenkins and add username and token for authentication.
+<p align="center">
+<img src="/images/github_credentials.png" width="30%" height="30%">
+</p>
+
 
 
 3. Pipeline using Pipeline script
