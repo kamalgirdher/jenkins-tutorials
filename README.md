@@ -47,7 +47,7 @@ Youtube : https://www.youtube.com/c/xtremeexcel
 
         d. Go to credentials manager in Jenkins and add username and token for authentication.
 <p align="center">
-<img src="/images/github_credentials.png" width="30%" height="30%">
+<img src="/images/github_credentials.png" width="60%" height="60%">
 </p>
 
 
