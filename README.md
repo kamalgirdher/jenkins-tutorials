@@ -2,7 +2,7 @@
 
 **Subscribe to my channel on Youtube ::**  https://www.youtube.com/c/xtremeexcel?sub_confirmation=1
 
-<img src="/images/journey.png" width="40%" height="40%">
+![CI_CD_Journey]("/images/journey.png")
 
 
 [Tutorial 1. Jenkins installation](/Tutorial1/README.md)
