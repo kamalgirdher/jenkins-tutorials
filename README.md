@@ -28,6 +28,27 @@ Youtube : https://www.youtube.com/c/xtremeexcel
 <img src="/images/github_plugin.png" width="30%" height="30%">
 </p>
 
+
+    If you have not created a token for github authentication before, follow the steps:
+
+        a. Go to settings.
+
+<p align="center">
+<img src="/images/settings.png" width="70%" height="70%">
+</p>
+
+        b. Click on Developer Settings.
+
+<p align="center">
+<img src="/images/developer_settings.png" width="30%" height="30%">
+</p>
+
+
+        c. Click on Personal Access token. Then click on Generate new token. Copy the token and save it somewhere for future reference.
+
+        d. Go to credentials manager in Jenkins and add username and token for authentication.
+
+
 3. Pipeline using Pipeline script
 
     Dashboard > New Item > Pipeline
