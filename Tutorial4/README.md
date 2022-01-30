@@ -1,11 +1,15 @@
 Tutorial 4. JENKINSFILE using SCM
 
-    Dashboard > New Item > Pipeline
-    Pipeline script from SCM
-    Enter github repo
-    Credentials
-    Specify branch
-    Script Path = JENKINSFILE1
+<p align="center">
+<a href="https://www.youtube.com/c/xtremeexcel?sub_confirmation=1"><img src="/images/subscribe.gif" width="30%" height="30%"></a>
+</p>
+
+Dashboard > New Item > Pipeline
+Pipeline script from SCM
+Enter github repo
+Credentials
+Specify branch
+Script Path = JENKINSFILE1
 
     Windows
     ```

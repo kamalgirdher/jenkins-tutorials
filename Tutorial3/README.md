@@ -1,5 +1,12 @@
 # Tutorial 3. Pipeline using Pipeline script
 
+
+<p align="center">
+<a href="https://www.youtube.com/c/xtremeexcel?sub_confirmation=1"><img src="/images/subscribe.gif" width="30%" height="30%"></a>
+</p>
+
+
+
 Dashboard > New Item > Pipeline
 
 <p align="left">

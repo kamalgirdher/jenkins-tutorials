@@ -1,5 +1,9 @@
 # Tutorial 2. Github account, github plugin, github token
 
+<p align="center">
+<a href="https://www.youtube.com/c/xtremeexcel?sub_confirmation=1"><img src="/images/subscribe.gif" width="30%" height="30%"></a>
+</p>
+
 
 If you don't have a github account, then visit https://github.com/signup and create an account.
 
