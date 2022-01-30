@@ -1,8 +1,9 @@
-# jenkins-tutorials
+# Jenkins Tutorials - CI/ CD - DevOps
+
 
 **Subscribe to my channel on Youtube ::**  https://www.youtube.com/c/xtremeexcel?sub_confirmation=1
 
-![CI_CD_Journey]("/images/journey.png")
+![CI_CD_Journey](/images/journey.png)
 
 
 [Tutorial 1. Jenkins installation](/Tutorial1/README.md)
