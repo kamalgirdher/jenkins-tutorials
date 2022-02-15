@@ -17,7 +17,7 @@ pipeline {
                         docker rm hello
                         docker image rm -f kamal
                         mv index.html ci/index.html
-                        docker build -t kamal .
+                        docker build -t kamal ci/
                         docker run -td --name hello -p 80:80 kamal
                         '''
                     } catch (Exception e) {
