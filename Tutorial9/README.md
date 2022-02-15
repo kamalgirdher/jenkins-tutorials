@@ -32,7 +32,7 @@ sudo apt-get install openssh-server
 2. Go to New Node. Enter Node name. Mark as Permanent agent and click Ok.
 
 <p align="center">
-<img src="/images/addNewNode.png" width="65%" height="65%">
+<img src="/images/addNewNode.png" width="55%" height="55%">
 </p>
 
 3. Upadate No. of executors to 2,3 whatever. You can keep it 1 as well. This controls how many executors are allowed on a node to run in parallel.
@@ -50,7 +50,7 @@ In my case, it is /user/kamal
 7. Select Launch method as "Launch agents via SSH". In case you do not see this opetion in dorpdown, you need to install SSH plugins on Jenkins.
 
 <p align="center">
-<img src="/images/sshPlugins.png" width="65%" height="65%">
+<img src="/images/sshPlugins.png" width="45%" height="45%">
 </p>
 
 8. Get the ip of ubuntu. Use this command on ubuntu terminal(Virtual machine/node).
@@ -144,7 +144,7 @@ pipeline {
 
 15. Now if we use JENKINSFILE5 from github repo to build the pipeline, it may fail.
 
-``
+```
 Selected Git installation does not exist. Using Default
 The recommended git tool is: NONE
 ```
