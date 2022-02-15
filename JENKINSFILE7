@@ -1,0 +1,57 @@
+pipeline {
+    agent {
+        label 'ubuntuNode1'
+    }
+    stages {
+        stage('pre -build') {
+            steps {
+                sh 'echo Pre-build'
+            }
+        }
+        stage('build and Deploy') {
+            steps {
+                script {
+                    try {
+                        docker stop hello || true && docker rm hello || true && docker image rm -f kamal || true
+                        mv index.html ci/index.html
+                        docker build -t kamal ci/
+                        docker run -td --name hello -p 80:80 kamal
+                    } catch (Exception e) {
+                        echo 'Exception occurred: ' + e.toString()
+                    }
+                }           
+            }
+        }
+        stage('Unit tests') {
+            steps {
+                sh 'echo Running unit tests'
+            }
+        }
+        stage('Regression tests') {
+            steps {
+                parallel(
+                    chrome : {
+                        sh 'echo Running E2E tests on chrome'
+                    },
+                    firefox : {
+                        sh 'echo Running E2E tests on chrome'
+                    },
+                    safari : {
+                        sh 'echo Running E2E tests on chrome'
+                    }
+                )
+                
+            }
+        }
+        stage('Release to prod') {
+            steps {
+                sh 'echo Releasing to prod'
+            }
+        }
+    }
+ post {
+        always {
+            echo 'Cleanup after everything!'
+        }
+    }
+}
