@@ -30,8 +30,9 @@ pipeline {
                         sh '''
                         pwd
                         ls
-                        cat ci/index.html
-                        mv index.html ci/index.html
+                        ls /ci
+                        cat /ci/index.html
+                        sudo mv index.html /ci/index.html
                         docker build -t kamal ci
                         docker run -td --name hello -p 80:80 kamal
                         '''
