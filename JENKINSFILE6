@@ -13,22 +13,11 @@ pipeline {
                 script {
                     try {
                         sh '''
-                        // Stop container
-                        sudo docker stop hello'
-                        
-                        // Delete container
+                        sudo docker stop hello
                         sudo docker rm hello
-                        
-                        // Delete image
                         sudo docker image rm -f kamal
-
-                        // Move index.html to ci
                         mv index.html ci/index.html
-                        
-                        // docker build
                         sudo docker build -t kamal .
-                        
-                        // container start
                         sudo docker run -td --name hello -p 80:80 kamal
                         '''
                     } catch (Exception e) {
