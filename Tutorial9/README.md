@@ -88,7 +88,7 @@ where 192.168.29.119 is VM ip address in our case.
 ```
 pipeline {
     agent {
-        label 'vmubuntu'
+        label 'ubuntuNode1'
     }
     stages {
         stage('pre -build') {
