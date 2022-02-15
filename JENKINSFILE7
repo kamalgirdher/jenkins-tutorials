@@ -10,7 +10,8 @@ pipeline {
         }
         stage('build and Deploy') {
             steps {
-                script {
+                echo "Hello"
+                /*script {
                     try {
                         docker stop hello
                     } catch (Exception e) {
@@ -26,7 +27,7 @@ pipeline {
                     mv index.html /ci/index.html
                     docker build -t kamal /ci/Dockerfile
                     docker run -td --name hello -p 80:80 kamal
-                }           
+                }*/           
             }
         }
         stage('Unit tests') {
