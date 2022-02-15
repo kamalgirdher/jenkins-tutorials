@@ -10,31 +10,31 @@ pipeline {
         }
         stage('build and Deploy') {
             steps {
-                //build command
-                try {
-                    sh '''
-                    // Stop container
-                    sudo docker stop hello'
-                    
-                    // Delete container
-                    sudo docker rm hello
-                    
-                    // Delete image
-                    sudo docker image rm -f kamal
+                script {
+                    try {
+                        sh '''
+                        // Stop container
+                        sudo docker stop hello'
+                        
+                        // Delete container
+                        sudo docker rm hello
+                        
+                        // Delete image
+                        sudo docker image rm -f kamal
 
-                    // Move index.html to ci
-                    mv index.html ci/index.html
-                    
-                    // docker build
-                    sudo docker build -t kamal .
-                    
-                    // container start
-                    sudo docker run -td --name hello -p 80:80 kamal
-                    '''
-                } catch (Exception e) {
-                    echo 'Exception occurred: ' + e.toString()
-                }
-                                
+                        // Move index.html to ci
+                        mv index.html ci/index.html
+                        
+                        // docker build
+                        sudo docker build -t kamal .
+                        
+                        // container start
+                        sudo docker run -td --name hello -p 80:80 kamal
+                        '''
+                    } catch (Exception e) {
+                        echo 'Exception occurred: ' + e.toString()
+                    }
+                }           
             }
         }
         stage('Unit tests') {
