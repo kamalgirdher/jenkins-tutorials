@@ -13,12 +13,12 @@ pipeline {
                 script {
                     try {
                         sh '''
-                        sudo docker stop hello
-                        sudo docker rm hello
-                        sudo docker image rm -f kamal
+                        docker stop hello
+                        docker rm hello
+                        docker image rm -f kamal
                         mv index.html ci/index.html
-                        sudo docker build -t kamal .
-                        sudo docker run -td --name hello -p 80:80 kamal
+                        docker build -t kamal .
+                        docker run -td --name hello -p 80:80 kamal
                         '''
                     } catch (Exception e) {
                         echo 'Exception occurred: ' + e.toString()
