@@ -156,14 +156,10 @@ For this, you need to Configure the Node again. And towards the Bottom, you'll f
 Check Tool Locations. Select Git default and set path as "/usr/bin/git"
 
 <p align="center">
-<img src="/images/gitOnNode.png" width="65%" height="65%">
+<img src="/images/gitOnNode.png" width="35%" height="35%">
 </p>
 
 Now it should work from JENKINSFILE as well.
-
-<p align="center">
-<img src="/images/pipelineOldView.png" width="65%" height="65%">
-</p>
 
 
 <p align="center">
