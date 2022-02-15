@@ -1,3 +1,3 @@
 FROM nginx:alpine
-COPY index.html /usr/share/nginx/html
-ENTRYPOINT ["entrypoint.sh"]
+COPY ci/index.html /usr/share/nginx/html
+ENTRYPOINT ["ci/entrypoint.sh"]
