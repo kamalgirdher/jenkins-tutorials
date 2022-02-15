@@ -11,24 +11,19 @@ pipeline {
         stage('build and Deploy') {
             steps {
                 echo "Hello"
-                /*script {
-                    try {
-                        docker stop hello
-                    } catch (Exception e) {
-                        echo 'Exception occurred: ' + e.toString()
+                script {
+                        try {
+                            docker stop hello
+                        } catch (Exception e) {
+                            echo 'Exception occurred'
+                        }
+                        try {
+                            docker rm hello
+                        } catch (Exception e) {
+                            echo 'Exception occurred'
+                        }                    
                     }
-                    
-                    try {
-                        docker rm hello
-                    } catch (Exception e) {
-                        echo 'Exception occurred: ' + e.toString()
-                    }                    
-                    docker image rm -f kamal
-                    mv index.html /ci/index.html
-                    docker build -t kamal /ci/Dockerfile
-                    docker run -td --name hello -p 80:80 kamal
-                }*/           
-            }
+                }
         }
         stage('Unit tests') {
             steps {
