@@ -28,10 +28,6 @@ pipeline {
                             echo 'Exception occurred'
                         }
                         sh '''
-                        pwd
-                        ls
-                        ls $(pwd)/ci
-                        cat $(pwd)/ci/index.html
                         mv index.html $(pwd)/ci/index.html
                         docker build -t kamal $(pwd)/ci
                         docker run -td --name hello -p 80:80 kamal
