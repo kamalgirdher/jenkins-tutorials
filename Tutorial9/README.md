@@ -1,43 +1,73 @@
 # Tutorial 9. Virtual Machine agent
 
-JENKINSFILE 4
+To set up an agent on a VM, we first need to have the VM on same network. For this, I created a VM using Oracle Virtualbox and installed Ubuntu on it.
+
+## Steps to Create VM:
+1. Download and install virtualbox > https://www.virtualbox.org/wiki/Downloads
+2. Create a new VM and install ubuntu. [Link](https://brb.nci.nih.gov/seqtools/installUbuntu.html)
+
+## Setps to Configure Network:
+
+1. Open Oracle virtualbox manager.
+2. Select the VM and open settings.
+3. Go to network.
+4. Replace NAT adapder in Adapter 1 with Bridge Adapter.
+
+<p align="center">
+<img src="/images/ubuntuNetworkBridge.png" width="45%" height="45%">
+</p>
+
+And we are good to launch the VM.
+
+
+## One time Installation on VM:
+
+```
+sudo apt update
+sudo apt-get install openssh-server
+```
+
+
+
+
+JENKINSFILE 5
 ```
 pipeline {
     agent {
-        label vmubuntu
+        label 'vmubuntu'
     }
     stages {
         stage('pre -build') {
             steps {
-                bat 'echo Pre-build'
+                sh 'echo Pre-build'
             }
         }
         stage('build') {
             steps {
-                bat 'echo Build in progress.'
+                sh 'echo Build in progress.'
             }
         }
         stage('Unit tests') {
             steps {
-                bat 'echo Running unit tests'
+                sh 'echo Running unit tests'
             }
         }
         stage('deploy') {
             steps {
-                bat 'echo Deploying build'
+                sh 'echo Deploying build'
             }
         }
         stage('Regression tests') {
             steps {
                 parallel(
                     chrome : {
-                        bat 'echo Running E2E tests on chrome'
+                        sh 'echo Running E2E tests on chrome'
                     },
                     firefox : {
-                        bat 'echo Running E2E tests on chrome'
+                        sh 'echo Running E2E tests on chrome'
                     },
                     safari : {
-                        bat 'echo Running E2E tests on chrome'
+                        sh 'echo Running E2E tests on chrome'
                     }
                 )
                 
@@ -45,7 +75,7 @@ pipeline {
         }
         stage('Release to prod') {
             steps {
-                bat 'echo Releasing to prod'
+                sh 'echo Releasing to prod'
             }
         }
     }
