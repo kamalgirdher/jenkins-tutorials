@@ -10,26 +10,21 @@ pipeline {
         }
         stage('build and Deploy') {
             steps {
-                script {
-                    try {
-                        if [ "$(docker ps -qa -f name=hello)" ]; then
-                            echo ":: Found container - hello"
-                            if [ "$(docker ps -q -f name=hello)" ]; then
-                                echo ":: Stopping running container - hello"
-                                docker stop hello;
-                            fi
-                            echo ":: Removing stopped container - hello"
-                            docker rm hello;
-                        fi
-                        //docker stop hello || true
-                        //docker rm hello || true
-                        //docker image rm -f kamal || true
-                        mv index.html ci/index.html
-                        docker build -t kamal ci/
-                        docker run -td --name hello -p 80:80 kamal
-                    } catch (Exception e) {
-                        echo 'Exception occurred: ' + e.toString()
-                    }
+                if [ "$(docker ps -qa -f name=hello)" ]; then
+                    echo ":: Found container - hello"
+                    if [ "$(docker ps -q -f name=hello)" ]; then
+                        echo ":: Stopping running container - hello"
+                        docker stop hello;
+                    fi
+                    echo ":: Removing stopped container - hello"
+                    docker rm hello;
+                fi
+                //docker stop hello || true
+                //docker rm hello || true
+                //docker image rm -f kamal || true
+                mv index.html ci/index.html
+                docker build -t kamal ci/
+                docker run -td --name hello -p 80:80 kamal
                 }           
             }
         }
