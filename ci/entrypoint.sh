@@ -1,1 +1,1 @@
-echo 'Here we go...' >> /usr/share/nginx/html/index.html
+'Here we go...' >> /usr/share/nginx/html/index.html
