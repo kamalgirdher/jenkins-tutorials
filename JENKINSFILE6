@@ -1,0 +1,72 @@
+pipeline {
+    agent {
+        label 'ubuntuNode1'
+    }
+    stages {
+        stage('pre -build') {
+            steps {
+                sh 'echo Pre-build'
+            }
+        }
+        stage('build and Deploy') {
+            steps {
+                //build command
+                try {
+                    sh '''
+                    // Stop container
+                    sudo docker stop hello'
+                    
+                    // Delete container
+                    sudo docker rm hello
+                    
+                    // Delete image
+                    sudo docker image rm -f kamal
+
+                    // Move index.html to ci
+                    mv index.html ci/index.html
+                    
+                    // docker build
+                    sudo docker build -t kamal .
+                    
+                    // container start
+                    sudo docker run -td --name hello -p 80:80 kamal
+                    '''
+                } catch (Exception e) {
+                    echo 'Exception occurred: ' + e.toString()
+                }
+                                
+            }
+        }
+        stage('Unit tests') {
+            steps {
+                sh 'echo Running unit tests'
+            }
+        }
+        stage('Regression tests') {
+            steps {
+                parallel(
+                    chrome : {
+                        sh 'echo Running E2E tests on chrome'
+                    },
+                    firefox : {
+                        sh 'echo Running E2E tests on chrome'
+                    },
+                    safari : {
+                        sh 'echo Running E2E tests on chrome'
+                    }
+                )
+                
+            }
+        }
+        stage('Release to prod') {
+            steps {
+                sh 'echo Releasing to prod'
+            }
+        }
+    }
+ post {
+        always {
+            echo 'Cleanup after everything!'
+        }
+    }
+}
