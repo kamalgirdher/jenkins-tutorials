@@ -21,7 +21,13 @@ pipeline {
                             docker rm hello
                         } catch (Exception e) {
                             echo 'Exception occurred'
-                        }                    
+                        }
+                        try{
+                            docker image rm -f kamal
+                        } catch (Exception e) {
+                            echo 'Exception occurred'
+                        }
+                        mv index.html /ci/index.html
                     }
                 }
         }
