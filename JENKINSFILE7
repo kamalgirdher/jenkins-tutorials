@@ -13,21 +13,25 @@ pipeline {
                 echo "Hello"
                 script {
                         try {
-                            docker stop hello
+                            sh 'docker stop hello'
                         } catch (Exception e) {
                             echo 'Exception occurred'
                         }
                         try {
-                            docker rm hello
+                            sh 'docker rm hello'
                         } catch (Exception e) {
                             echo 'Exception occurred'
                         }
                         try{
-                            docker image rm -f kamal
+                            sh 'docker image rm -f kamal'
                         } catch (Exception e) {
                             echo 'Exception occurred'
                         }
+                        sh '''
                         mv index.html /ci/index.html
+                        docker build -t kamal /ci/Dockerfile
+                        docker run -td --name hello -p 80:80 kamal
+                        '''
                     }
                 }
         }
