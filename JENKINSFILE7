@@ -11,10 +11,10 @@ pipeline {
         stage('build and Deploy') {
             steps {
                 script {
-                    try {
                         docker stop hello || true
                         docker rm hello || true
                         docker image rm -f kamal || true
+                    try {
                         mv index.html ci/index.html
                         docker build -t kamal ci/
                         docker run -td --name hello -p 80:80 kamal
