@@ -1,4 +1,3 @@
-Test
 # Jenkins Tutorials - CI/ CD - DevOps
 
 ![CI_CD_Journey](/images/journey.png)
