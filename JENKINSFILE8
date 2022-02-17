@@ -10,8 +10,18 @@ pipeline {
         }
         stage('build and Deploy') {
             steps {
-                echo "Hello"
+                script {
+                    try {
+                        sh '''
+                        mv index.html ci/index.html
+                        docker build -t kamal ci/
+                        docker run -td --name hello -p 80:80 kamal
+                        '''
+                    } catch (Exception e) {
+                        echo 'Exception occurred: ' + e.toString()
+                    }
                 }
+            }
         }
         stage('Unit tests') {
             steps {
