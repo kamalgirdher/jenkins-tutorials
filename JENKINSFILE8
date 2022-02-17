@@ -17,7 +17,7 @@ pipeline {
                     sh '''
                     mv index.html ci/index.html
                     //docker build -t kamal ci/
-                    docker run -td --name hello -p 80:80 ${BUILD_NUMBER}
+                    docker run -td --name ${BUILD_NUMBER} -p 80:80 kamal
                     '''
                 }
             }
