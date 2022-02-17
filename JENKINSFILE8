@@ -1,0 +1,48 @@
+pipeline {
+    agent {
+        label 'ec2'
+    }
+    stages {
+        stage('pre -build') {
+            steps {
+                sh 'echo Pre-build'
+            }
+        }
+        stage('build and Deploy') {
+            steps {
+                echo "Hello"
+                }
+        }
+        stage('Unit tests') {
+            steps {
+                sh 'echo Running unit tests'
+            }
+        }
+        stage('Regression tests') {
+            steps {
+                parallel(
+                    chrome : {
+                        sh 'echo Running E2E tests on chrome'
+                    },
+                    firefox : {
+                        sh 'echo Running E2E tests on chrome'
+                    },
+                    safari : {
+                        sh 'echo Running E2E tests on chrome'
+                    }
+                )
+                
+            }
+        }
+        stage('Release to prod') {
+            steps {
+                sh 'echo Releasing to prod'
+            }
+        }
+    }
+ post {
+        always {
+            echo 'Cleanup after everything!'
+        }
+    }
+}
