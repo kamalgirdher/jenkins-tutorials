@@ -4,6 +4,13 @@ The easiest way to install Jenkins on Windows is to use the Jenkins Windows inst
 
 [Downlod Link](https://www.jenkins.io/download/)
 
+To launch jenkins using the war file, use this command:
+
+```
+java -jar jenkins.war
+```
+
+Make sure you have java installed before you run this command. Once it is up you can use jenkins at http://localhost:8080
 
 <p align="center">
 <a href="https://www.youtube.com/c/xtremeexcel?sub_confirmation=1"><img src="/images/subscribe.gif" width="30%" height="30%"></a>
