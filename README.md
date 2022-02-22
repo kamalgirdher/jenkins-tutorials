@@ -16,27 +16,25 @@ Though, a little knowledge of git/github would be good. I therefore recommend to
 
 ## Content
 
-[Tutorial 1. Jenkins installation](/Tutorial1/README.md)
+[Tutorial 1. Jenkins installation](/Tutorial_01/README.md)
 
-[Tutorial 2. Github account, github plugin, github token](/Tutorial2/README.md)
+[Tutorial 2. Github account, github plugin, github token](/Tutorial_02/README.md)
 
-[Tutorial 3. Pipeline using Pipeline script](/Tutorial3/README.md)
+[Tutorial 3. Pipeline using Pipeline script](/Tutorial_03/README.md)
 
-[Tutorial 4. JENKINSFILE using SCM](/Tutorial4/README.md)
+[Tutorial 4. JENKINSFILE using SCM](/Tutorial_04/README.md)
 
-[Tutorial 5. Pipeline with post actions](/Tutorial5/README.md)
+[Tutorial 5. Pipeline with post actions](/Tutorial_05/README.md)
 
-[Tutorial 6. Multiple Stages](/Tutorial6/README.md)
+[Tutorial 6. Multiple Stages](/Tutorial_06/README.md)
 
-[Tutorial 7. Blue ocean](/Tutorial7/README.md)
+[Tutorial 7. Blue ocean](/Tutorial_07/README.md)
 
-[Tutorial 8. Parallel steps in a stage](/Tutorial8/README.md)
+[Tutorial 8. Parallel steps in a stage](/Tutorial_08/README.md)
 
-[Tutorial 9. Virtual Machine agent](/Tutorial9/README.md)
+[Tutorial 9. Virtual Machine agent](/Tutorial_09/README.md)
 
 [Tutorial 10. Docker agent](/Tutorial10/README.md)
-
-[Tutorial 11. AWS agent](/Tutorial11/README.md)
 
 
 
