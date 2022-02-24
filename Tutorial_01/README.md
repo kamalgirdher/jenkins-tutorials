@@ -12,6 +12,10 @@ java -jar jenkins.war
 
 Make sure you have java installed before you run this command. Once it is up you can use jenkins at http://localhost:8080
 
+First time it will ask for a password. You can open the file mentioned just above the password field and copy paste that initial password to login for the first time. Then you can set your profile.
+
+After that it will ask for installation of some plugins.
+
 <p align="center">
 <a href="https://www.youtube.com/c/xtremeexcel?sub_confirmation=1"><img src="/images/subscribe.gif" width="30%" height="30%"></a>
 </p>
