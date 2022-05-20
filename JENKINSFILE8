@@ -27,7 +27,6 @@ pipeline {
                         echo "Error while deleting image"
                     }
                     sh '''
-                    mv index.html index.html
                     docker build -t kamal ci/
                     docker run -td --name hello -p 80:80 kamal
                     '''
