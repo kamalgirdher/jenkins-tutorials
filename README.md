@@ -6,7 +6,7 @@ Welcome to my course **Jenkins Pipelines | CI/CD | DevOps**
 
 In this course you'd learn how to create pipelines from scratch. No prior knowledge of Jenkins is required for this course.
 
-Though, a little knowledge of git/github would be good. I therefore recommend to go though my FREE course on [udemy to lean Git & Github.](https://www.udemy.com/course/gitandgithub/?referralCode=2799194A0FCC520AB4C3)
+Though, a little knowledge of git/github would be good. I therefore recommend to go though my FREE course on [udemy to learn Git & Github.](https://www.udemy.com/course/gitandgithub/?referralCode=2799194A0FCC520AB4C3)
 
 
 <p align="center">
