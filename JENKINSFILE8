@@ -27,6 +27,7 @@ pipeline {
                         echo "Error while deleting image"
                     }
                     sh '''
+                    docker container prune -f
                     docker build -t kamal ci/
                     docker run -td --name hello -p 80:80 kamal
                     '''
