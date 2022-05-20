@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        label 'ec2'
+        label 'ubunutuNode1'
     }
     stages {
         stage('pre -build') {
@@ -10,11 +10,11 @@ pipeline {
         }
         stage('build and Deploy') {
             agent {
-                label 'ec2'
+                label 'ubunutuNode1'
             }   
             steps {
                 script {
-                    sh 'docker ps -q --filter "name=hello" | grep -q . && docker stop hello && docker rm -fv hello'                    
+                    sh 'docker ps -q --filter "name=hello" | grep -q . && docker stop hello && docker rm -fv hello'
                     try{
                         docker image rm -f kamal
                     }catch(Exception e){
