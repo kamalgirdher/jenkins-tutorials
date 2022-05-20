@@ -6,10 +6,12 @@ pipeline {
         stage('pre -build') {
             steps {
                 sh 'echo Pre-build'
-                try{
-                    sh 'docker ps -q --filter "name=hello" | grep -q . && docker stop hello && docker rm -fv hello'
-                }catch(Exception e){
-                    echo "No container found!"
+                script {
+                    try{
+                        sh 'docker ps -q --filter "name=hello" | grep -q . && docker stop hello && docker rm -fv hello'
+                    }catch(Exception e){
+                        echo "No container found!"
+                    }
                 }
             }
         }
