@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        label 'ubunutuNode1'
+        label 'ubuntuNode1'
     }
     stages {
         stage('pre -build') {
@@ -10,7 +10,7 @@ pipeline {
         }
         stage('build and Deploy') {
             agent {
-                label 'ubunutuNode1'
+                label 'ubuntuNode1'
             }   
             steps {
                 script {
