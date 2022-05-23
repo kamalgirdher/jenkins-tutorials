@@ -18,7 +18,7 @@ pipeline {
         stage('build and Deploy') {
             agent {
                 label 'ubuntuNode1'
-            }   
+            }
             steps {
                 script {
                     try{
@@ -35,8 +35,14 @@ pipeline {
             }
         }
         stage('Unit tests') {
+            agent {
+                label 'ubuntuNode1'
+            }
             steps {
                 sh 'echo Running unit tests'
+                script{
+                    wget http://localhost:80
+                }
             }
         }
         stage('Regression tests') {
