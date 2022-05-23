@@ -40,8 +40,8 @@ pipeline {
             }
             steps {
                 sh 'echo Running unit tests'
-                def response = sh 'wget --server-response http://localhost:80 2>&1'
                 script{
+                    def response = sh 'wget --server-response http://localhost:80 2>&1'
                     if (response == '200'){
                         sh 'echo "Unit test passed"'
                     }else{
