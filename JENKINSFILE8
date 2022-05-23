@@ -45,6 +45,7 @@ pipeline {
                 sh 'echo Running unit tests'
                 script{
                     env.resp = sh 'wget --server-response http://localhost:80 2>&1'
+                    echo env.resp
                     if (env.resp == '200'){
                         sh 'echo "Unit test passed"'
                     }else{
