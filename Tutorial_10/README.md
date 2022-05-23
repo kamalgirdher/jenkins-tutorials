@@ -106,11 +106,16 @@ To see the complete script, you can sefer JENKINSFILE8 in this repository.
 
 As we use docker run, it launches a container "hello" from the image "kamal". And the -p 80:80 will do the mapping of prt 80 of VM with port 80 of docker container which also gets the same host IP.
 
+<p align="center">
+    <img src="/images/machineVmDocker.png" width="40%" height="40%">
+</p>
+
 And when we open <VM IP>:80 (eg. 192.168.29.119:80) from our root machine(Windows in our case), it opens the HTML page (index.html) with "Here we go..." text appended after Hello message.
 
 <p align="center">
-    <img src="/images/helloNginxApp.png" width="60%" height="60%">
+    <img src="/images/helloNginxApp.png" width="40%" height="40%">
 </p>
+
 
 ## Linting
 
