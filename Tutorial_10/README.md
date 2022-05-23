@@ -5,8 +5,11 @@
 We are having a Windows machine on which we hosted Jenkins. We created an ubuntu VM on virtualbox. Now we are installing docker on that VM. Our target is to create an agent using docker. Let's first see installation of docker on ubuntu.
 
 ```
-apt-get update
+sudo apt-get update
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
 ```
+
+For more details, you may check the instructions here: https://docs.docker.com/engine/install/ubuntu/
 
 
 ## Docker image using Dockerfile
@@ -23,6 +26,7 @@ Then write below instructions in the file and save.
 
 ```
 FROM nginx:alpine
+WORKDIR /ci
 COPY index.html /usr/share/nginx/html
 ```
 
@@ -37,10 +41,76 @@ Then we need to create index.html file. Here is the content of index.html
 </html>
 ```
 
+## Set up script (run.sh) to run on container
+
+After creating the dockerfile, we would want to run this dockerfile that will create an image. And we would be using containers from that image. Whenever we would be running a container, we would want to run a script. Let's create a new file and name it as run.sh
+
+```
+echo 'Here we go...' >> /usr/share/nginx/html/index.html
+```
+
+We are appending the text 'Here we go...' after the html in index.html. Though this won't make a proper html, yet it is enough to explain that run.sh was able to update the content. 
+In real use cases, this script would be capable of building the code once we move the files.
+
 
 ## Build docker image in pipeline
+Now this one is important. We want to run the Dockerfile to create an image. An image created after first run would stay on the VM. So, next time when we would try to run Dockerfile, it would throw error that image is already there. Therefore, we need to delete the image before we build the dockerfile to create an image.
+
+The same thing we need to do for containers. Since the latest application changes would reflect only on a new container, therefore we need to remove all old containers before creating a new one.
+
+We would be stopping & deleting the container in pre-build stage. And we will surround it by try..catch to catch the errors in case container with that name doesn't exist.
+
+```
+stage('pre -build') {
+    steps {
+        sh 'echo Pre-build'
+        script {
+            try{
+                sh 'docker ps -q --filter "name=hello" | grep -q . && docker stop hello && docker rm -fv hello'
+            }catch(Exception e){
+                echo "No container found!"
+            }
+        }
+    }
+}
+```
+
+And in the "Build and Deploy" stage, we would delete the image(if exists), prune unused containers and then build.
+
+```
+stage('build and Deploy') {
+    agent {
+        label 'ubuntuNode1'
+    }
+    steps {
+        script {
+            try{
+                docker image rm -f kamal
+            }catch(Exception e){
+                echo "Error while deleting image"
+            }
+            sh '''
+            docker container prune -f
+            docker build -t kamal ci/
+            docker run -td --name hello -p 80:80 kamal
+            '''
+        }
+    }
+}
+```
+
+To see the complete script, you can sefer JENKINSFILE8 in this repository.
+
 
 ## Create container , Network settings
+
+As we use docker run, it launches a container "hello" from the image "kamal". And the -p 80:80 will do the mapping of prt 80 of VM with port 80 of docker container which also gets the same host IP.
+
+And when we open <VM IP>:80 (eg. 192.168.29.119:80) from our root machine(Windows in our case), it opens the HTML page (index.html) with "Here we go..." text appended after Hello message.
+
+<p align="center">
+    <img src="/images/helloNginxApp.png" width="60%" height="60%">
+</p>
 
 ## Linting
 
