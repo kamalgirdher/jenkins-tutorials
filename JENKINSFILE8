@@ -39,10 +39,10 @@ pipeline {
                 label 'ubuntuNode1'
             }
             steps {
-                sh 'echo Running unit tests'
-                script{
-                    echo wget --server-response 'http://localhost:80' 2>&1 | awk '/^  HTTP/{print $2}'
-                }
+                sh '''
+                echo Running unit tests'
+                echo wget --server-response http://localhost:80 2>&1 | awk '/^  HTTP/{print $2}'
+                '''
             }
         }
         stage('Regression tests') {
