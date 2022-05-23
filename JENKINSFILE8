@@ -41,7 +41,7 @@ pipeline {
             steps {
                 sh '''
                 echo Running unit tests
-                echo wget --server-response http://localhost:80 2>&1
+                wget --server-response http://localhost:80 2>&1
                 '''
             }
         }
