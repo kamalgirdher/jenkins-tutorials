@@ -38,22 +38,8 @@ pipeline {
             agent {
                 label 'ubuntuNode1'
             }
-            environment{
-                resp = '0'
-            }
             steps {
                 sh 'echo Running unit tests'
-                script{
-                    sh '''
-                    env.resp = wget -qO- http://localhost:80
-                    echo env.resp
-                    '''
-                    if (env.resp.contains('200')){
-                        sh 'echo "Unit test passed"'
-                    }else{
-                        error("Build failed because of this and that..")
-                    }
-                }
             }
         }
         stage('Regression tests') {
