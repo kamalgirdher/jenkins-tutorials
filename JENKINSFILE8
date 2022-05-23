@@ -38,17 +38,14 @@ pipeline {
             agent {
                 label 'ubuntuNode1'
             }
-            environment {
-                response = '0'
-            }
             steps {
                 sh 'echo Running unit tests'
                 def response = sh 'wget --server-response http://localhost:80 2>&1'
-                if (response == '200'){
-                    sh 'echo "Unit test passed"'
-                }else{
-                    error("Build failed because of this and that..")
-                }
+            }
+            if (response == '200'){
+                sh 'echo "Unit test passed"'
+            }else{
+                 error("Build failed because of this and that..")
             }
         }
         stage('Regression tests') {
