@@ -41,7 +41,7 @@ pipeline {
             steps {
                 sh 'echo Running unit tests'
                 script{
-                    echo wget --server-response http://localhost:80 2>&1 | awk '/^  HTTP/{print $2}'
+                    echo wget --server-response http:\/\/localhost:80 2>&1 | awk '/^  HTTP/{print $2}'
                 }
             }
         }
