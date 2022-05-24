@@ -1,8 +1,16 @@
-# Tutorial 1. Jenkins installation
+# Tutorial 1. Jenkins - introduction and installation
+
+
+
+### What is Devops and Why it is important?
+
+
+
+### Installation
 
 The easiest way to install Jenkins on Windows is to use the Jenkins Windows installer. Though we can install Jenkins on linux, mac, dockers etc but in this complete series I'll be using Jenkins hosted from my windows machine. I am using jenkins war file instead of MSI installer. And there is no specific reason why I am doing so. 
 
-[Downlod Link](https://www.jenkins.io/download/)
+[Download Link](https://www.jenkins.io/download/)
 
 To launch jenkins using the war file, use this command:
 

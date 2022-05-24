@@ -1,4 +1,4 @@
-Tutorial 4. JENKINSFILE using SCM
+Tutorial 4. JENKINSFILE using SCM (Declarative)
 
 Dashboard > New Item > Pipeline
 Pipeline script from SCM

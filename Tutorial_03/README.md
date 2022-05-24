@@ -1,5 +1,26 @@
-# Tutorial 3. Pipeline using Pipeline script
+# Tutorial 3. Pipelines Basics
 
+Lot of Developers, DevOps folks and other engineers use Jenkins in their routinw work. And Jekins pipelines are preferred over freestyle jobs. These pipelines are written in two ways:
+1. Declarative Pipelines
+2. Scripted Pipelines
+
+Let's understand the difference between these two.
+
+### Declarative vs Scripted Pipelines
+
+| Declarative Pipelines  | Scripted Pipelines |
+| ------------- | ------------- |
+| 1. Declarative is recent and advanced stype of writing a pipeline.  | 1. When Pipeline were initally introduced, Groovy was selected as the foundation. This traditional way to build pipelines using Groovy is now known as the "Scripted Pipeline" or DSL(Domain Specific Language).  |
+| 2. Groovy is not preferred choice of all developers, therefore this is accepted more now. Declarative pipeline limits what is available to the user with a more strict and pre-defined structure, making it an ideal choice for simpler CI/CD pipelines. | 2. A scripted pipeline is a fully-featured programming environment. Scripted Pipeline offers a tremendous amount of flexibility and extensibility to Jenkins users.  |
+| 3. This can be integrated with Blue Ocean.  | 3. Blue Ocean support is not there with Scripted pipelines.  |
+| 4. Declarative pipeline supports code validation. In case of any syntax errors, the user will get an error at the start of the execution.  | 4. This does not support code validation. It will throw error only when that particular step is getting executed.  |
+| 5. It offers a feature to restart from specific stage.  | 5. It doesn't offer this feature.  |
+| 6. It bring a "When" block that can skip the whole stage if a condition is not met | 6. Here, we need to achieve this using if else conditions.  |
+| 7. Here we have Envionment variables. | 7. Here we use global variables.  |
+| 8. It supports execution of scripts in a block called "script".  | 8. It does not support execution of declarative blocks.  |
+
+ 
+### Pipeline using Pipeline script
 
 Dashboard > New Item > Pipeline
 
