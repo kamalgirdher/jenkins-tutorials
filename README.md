@@ -37,6 +37,19 @@ Though, a little knowledge of git/github would be good. I therefore recommend to
 [Tutorial 10. Docker agent](/Tutorial10/README.md)
 
 
+Environment
+
+Triggers
+Flow control if else
+Try catch
+When
+AllOf AnyOf
+Docker agent
+Sequential Stages
+Axis
+
+
+
 
 <p align="center">
 <a href="https://www.youtube.com/c/xtremeexcel?sub_confirmation=1"><img src="/images/subscribe.gif" width="30%" height="30%"></a>

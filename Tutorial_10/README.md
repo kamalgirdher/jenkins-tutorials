@@ -115,12 +115,3 @@ And when we open <VM IP>:80 (eg. 192.168.29.119:80) from our root machine(Window
 <p align="center">
     <img src="/images/helloNginxApp.png" width="40%" height="40%">
 </p>
-
-
-## Linting
-
-## Pipeline - Unit test
-
-## Pipeline -Regression test through other container
-
-## Clean workspace

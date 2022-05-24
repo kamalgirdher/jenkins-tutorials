@@ -1,1 +1,25 @@
-# Tutorial 11. AWS(cloud) agent
+# Tutorial 11. Pipeline Concepts
+
+## Directives
+------
+
+#### Environment Variables
+
+
+#### options
+
+
+#### parameters
+
+
+#### triggers
+
+
+#### tools
+
+
+#### input
+
+
+#### when
+
