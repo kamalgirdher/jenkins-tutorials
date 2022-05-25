@@ -24,17 +24,17 @@ pipeline {
         stage('Regression tests') {
             parallel{
                 stage ('chrome'){
-                    step {
+                    steps {
                         sh 'echo Running E2E tests on chrome'
                     }
                 }
                 stage ('firefox'){
-                    step {
+                    steps {
                         sh 'echo Running E2E tests on firefox'
                     }
                 }
                 stage ('safari'){
-                    step {
+                    steps {
                         sh 'echo Running E2E tests on safari'
                     }
                 }     
