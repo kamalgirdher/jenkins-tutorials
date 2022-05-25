@@ -26,10 +26,10 @@ pipeline {
                 parallel {
                     stage('chrome') {
                         bat 'echo Running E2E tests on chrome'
-                    },
+                    }
                     stage('firefox') {
                         bat 'echo Running E2E tests on firefox'
-                    },
+                    }
                     stage('safari') {
                         bat 'echo Running E2E tests on Safari'
                     }
