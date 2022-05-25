@@ -6,6 +6,8 @@ Lot of Developers, DevOps folks and other engineers use Jenkins in their routinw
 
 Let's understand the difference between these two.
 
+------
+
 ### Declarative vs Scripted Pipelines
 
 | Declarative Pipelines  | Scripted Pipelines |
@@ -15,11 +17,12 @@ Let's understand the difference between these two.
 | 3. This can be integrated with Blue Ocean.  | 3. Blue Ocean support is not there with Scripted pipelines.  |
 | 4. Declarative pipeline supports code validation. In case of any syntax errors, the user will get an error at the start of the execution.  | 4. This does not support code validation. It will throw error only when that particular step is getting executed.  |
 | 5. It offers a feature to restart from specific stage.  | 5. It doesn't offer this feature.  |
-| 6. It bring a "When" block that can skip the whole stage if a condition is not met | 6. Here, we need to achieve this using if else conditions.  |
+| 6. It bring a "When" block that can skip the whole stage if a condition is not met. | 6. Here, we need to achieve this using if else conditions.  |
 | 7. Here we have Envionment variables. | 7. Here we use global variables.  |
 | 8. It supports execution of scripts in a block called "script".  | 8. It does not support execution of declarative blocks.  |
 
- 
+ ------
+
 ### Pipeline using Pipeline script
 
 Dashboard > New Item > Pipeline
