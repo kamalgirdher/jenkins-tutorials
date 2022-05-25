@@ -25,17 +25,17 @@ pipeline {
             parallel{
                 stage ('chrome'){
                     steps {
-                        sh 'echo Running E2E tests on chrome'
+                        bat 'echo Running E2E tests on chrome'
                     }
                 }
                 stage ('firefox'){
                     steps {
-                        sh 'echo Running E2E tests on firefox'
+                        bat 'echo Running E2E tests on firefox'
                     }
                 }
                 stage ('safari'){
                     steps {
-                        sh 'echo Running E2E tests on safari'
+                        bat 'echo Running E2E tests on safari'
                     }
                 }     
             }
