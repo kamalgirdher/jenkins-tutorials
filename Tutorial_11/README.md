@@ -91,6 +91,7 @@ pipeline {
 
 options is another directive through which we can control various things like
 
+```
 buildDiscarder
 checkoutToSubdirectory
 disableConcurrentBuilds
@@ -105,6 +106,7 @@ skipStagesAfterUnstable
 timeout
 timestamps
 parallelsAlwaysFailFast
+```
 
 For details: https://www.jenkins.io/doc/book/pipeline/syntax/#available-options
 
