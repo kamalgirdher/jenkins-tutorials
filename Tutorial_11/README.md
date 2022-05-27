@@ -21,14 +21,16 @@ The environment directive specifies a sequence of key-value pairs which will be 
 
 ```
 pipeline {
-    agent any
+    agent {
+        label 'ubuntuNode1'
+    }
     environment { 
         fname = 'kamal'
     }
     stages {
         stage('Example') {
             steps {
-                sh 'echo HELLO'
+                sh 'echo "HELLO ${fname}"'
             }
         }
     }
@@ -39,19 +41,21 @@ pipeline {
 
 ```
 pipeline {
-    agent any
+    agent {
+        label 'ubuntuNode1'
+    }
     stages {
         stage('one') {
             environment { 
                 fname = 'kamal'
             }
             steps {
-                sh 'echo HELLO'
+                sh 'echo "HELLO ${fname}"'
             }
         }
         stage('two') {
             steps {
-                sh 'echo WORLD'
+                sh 'echo "Hello ${fname}"'
             }
         }
     }
@@ -108,10 +112,58 @@ For details: https://www.jenkins.io/doc/book/pipeline/syntax/#available-options
 
 #### parameters
 
+A very rich feature of jenkins is that jobs can be parameterized. In pipelines, we have a directive named as parameters.The values for these user-specified parameters are made available to Pipeline steps via the params object.
+
+```
+pipeline {
+    agent any
+    parameters {
+        string(name: 'NAME', defaultValue: 'Uthred', description: 'Enter your name')
+        choice(name: 'CITY', choices: ['Bebbanburg', 'Mercia', 'East Anglia'], description: 'Choose your city')
+    }
+    stages {
+        stage('Example') {
+            steps {
+                echo "Hello ${params.NAME} of ${params.CITY}"
+            }
+        }
+    }
+}
+```
+To see complete list of parameters, you may refer https://www.jenkins.io/doc/book/pipeline/syntax/#parameters
+
 
 ------
 
 #### triggers
+
+The triggers directive defines the automated ways in which the Pipeline should be re-triggered.
+
+The most popular alternate for triggers is 'Web-hooks', if you are using SCM like Github or bitbuket. These webhooks initiate the pipeline when there is a code change/bracnch addition/PR creation on the repository.
+
+The triggers work in different way. These infact allow us to run pipeline as per <b>cron</b> schedule, polling SCM (<b>pollSCM</b>) for any changes or through <b>upstream</b> jobs.
+
+##### cron
+```
+triggers {
+    cron('H */4 * * 1-5')
+}
+```
+For cron syntax, you may refer https://www.jenkins.io/doc/book/pipeline/syntax/#cron-syntax
+
+##### pollSCM
+```
+triggers {
+    pollSCM('H */4 * * 1-5')
+}
+```
+
+##### upstream
+```
+triggers {
+    upstream(upstreamProjects: 'job1', threshold: hudson.model.Result.SUCCESS)
+}
+```
 
 
 ------
