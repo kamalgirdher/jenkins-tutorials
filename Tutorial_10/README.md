@@ -1,4 +1,4 @@
-# Tutorial 10. Docker agent
+# Tutorial 10. Docker on VM(ubuntu) agent
 
 ## Docker installation
 
@@ -51,6 +51,17 @@ echo 'Here we go...' >> /usr/share/nginx/html/index.html
 
 We are appending the text 'Here we go...' after the html in index.html. Though this won't make a proper html, yet it is enough to explain that run.sh was able to update the content. 
 In real use cases, this script would be capable of building the code once we move the files.
+
+Now, lets add steps in dockerfile to execute this run.sh.
+
+```
+FROM nginx:alpine
+WORKDIR /ci
+COPY index.html /usr/share/nginx/html
+COPY /run.sh /ci/
+RUN chmod 777 /ci/run.sh
+RUN /ci/run.sh
+```
 
 
 ## Build docker image in pipeline

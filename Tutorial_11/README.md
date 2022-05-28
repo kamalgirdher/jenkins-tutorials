@@ -110,6 +110,33 @@ parallelsAlwaysFailFast
 
 For details: https://www.jenkins.io/doc/book/pipeline/syntax/#available-options
 
+
+```
+pipeline {
+    agent any
+    stages {
+        stage ('one') {
+            options{
+                retry(3)
+            }
+            steps {
+               error ('ERROR') 
+            }
+        }
+        stage ('two') {
+            steps {
+               echo 'KAMAL'
+            }
+        }
+    }
+}
+```
+
+<p align="center">
+<img src="/images/options_retry.png" width="40%" height="40%">
+</p>
+
+
 ------
 
 #### parameters
@@ -172,14 +199,150 @@ triggers {
 
 #### tools
 
+We can use tools directive to install few tools through the pipeline. These tools are:
+
+```
+maven
+jdk
+gradle
+```
+
+and we can add the following in our pipeline:
+
+```
+tools {
+    maven 'apache-maven-3.0.1' 
+}
+```
 
 ------
 
 #### input
 
+The input directive allows us to ask user for input.
+
+```
+pipeline {
+    agent any
+    stages {
+        stage('one') {
+            input {
+                message "Enter you Name"
+                parameters {
+                    string(name: 'FIRSTNAME', defaultValue: 'Kamal')
+                }
+            }
+            steps {
+                echo "Hello ${FIRSTNAME}"
+            }
+        }
+    }
+}
+```
 
 ------
 
 #### when
 
+```
+pipeline {
+    agent any
+    environment{
+        abc = "HELLO"
+    }
+    stages {
+        stage('one') {
+            when {s
+                environment name: 'abc', value : 'HELLO'
+            }
+            steps {
+                echo 'HELLO there!!'
+            }
+        }
+    }
+}
+```
 
+
+
+```
+pipeline {
+    agent any
+    environment{
+        abc = "HELLO"
+        efg = "HI"
+    }
+    stages {
+        stage('one') {
+            when {
+                anyOf{
+                    environment name: 'abc', value : 'HELLO'
+                    environment name: 'efg', value : 'KAMAL'
+                }
+            }
+            steps {
+                echo 'HELLO there!!'
+            }
+        }
+    }
+}
+```
+    NOTE: Please go through all the options we have with "when" block at least once.
+    https://www.jenkins.io/doc/book/pipeline/syntax/#when
+
+
+------
+
+#### Flow Control (Scripted)
+
+<b>if..else</b>
+
+```
+pipeline {
+    agent any
+    environment{
+        fname = "KAMAL"
+    }
+    stages {
+        stage('one') {
+            steps{
+                script{
+                    if (env.fname == 'KAMAL') {
+                        echo 'HELLO KAMAL'
+                    }
+                    else{
+                        echo 'I do not know you!'
+                    }
+                }
+            }
+            
+        }
+    }
+}
+```
+
+<b>try...catch</b>
+
+```
+pipeline {
+    agent any
+    environment{
+        fname = "KAMAL"
+    }
+    stages {
+        stage('one') {
+            steps{
+                script{
+                    try{
+                        sh 'hello'
+                    }
+                    catch{
+                        echo 'Error occured!!!!'
+                    }
+                }
+            }
+            
+        }
+    }
+}
+```
