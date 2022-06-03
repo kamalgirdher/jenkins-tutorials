@@ -10,14 +10,14 @@ pipeline {
         }
         stage('build and Deploy') {
             agent {
-                docker {
-                    image 'nginx:alpine'
+                dockerfile {
+                    dir 'ci'
                     reuseNode true
                 }
             }
             steps {
                 script {
-                    echo whoami
+                    
                 }
             }
         }
