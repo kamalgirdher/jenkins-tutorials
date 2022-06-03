@@ -10,10 +10,9 @@ pipeline {
         }
         stage('build and Deploy') {
             agent {
+                dockerfile true
                 docker {
                     reuseNode true
-                    dir 'ci'
-                    label 'kamal'
                 }
             }
             steps {
