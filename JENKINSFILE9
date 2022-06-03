@@ -9,7 +9,11 @@ pipeline {
             }
         }
         stage('build and Deploy') {
-            agent { dockerfile true }
+            agent {
+                reuseNode true
+                dir 'ci'
+                label 'kamal'
+                }
             steps {
                 script {
                     ifconfig
