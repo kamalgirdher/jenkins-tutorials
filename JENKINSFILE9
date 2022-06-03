@@ -17,8 +17,7 @@ pipeline {
             }
             steps {
                 script {
-                    ifconfig
-                    whoami
+                    echo whoami
                 }
             }
         }
