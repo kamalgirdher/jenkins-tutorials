@@ -17,7 +17,9 @@ pipeline {
             }
             steps {
                 script {
-                   sh 'echo kamal' 
+                   sh 'echo kamal'
+                   sh 'whoami'
+                   sh 'ifconfig'
                 }
             }
         }
