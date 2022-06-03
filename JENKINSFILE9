@@ -4,12 +4,13 @@ pipeline {
     }
     stages {
         stage('pre -build') {
-            echo "pre-build"
+            steps {
+                echo "pre-build"
+            }
         }
         stage('build and Deploy') {
             agent {
                 docker{
-                    dir './ci'
                     label 'kamal'
                     dockerfile true
                 }
