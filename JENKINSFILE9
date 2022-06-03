@@ -9,11 +9,7 @@ pipeline {
             }
         }
         stage('build and Deploy') {
-            agent {
-                docker{
-                    dockerfile true
-                }
-            }
+            agent { dockerfile true }
             steps {
                 script {
                     ifconfig
