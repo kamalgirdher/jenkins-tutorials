@@ -10,8 +10,8 @@ pipeline {
         }
         stage('build and Deploy') {
             agent {
-                dockerfile true
                 docker {
+                    image 'nginx:alpine'
                     reuseNode true
                 }
             }
