@@ -30,7 +30,7 @@ Though, a little knowledge of git/github would be good. I therefore recommend to
 
 [007_First_pipeline_using_Pipeline_script](007_First_pipeline_using_Pipeline_script/README.md)
 
-[008_Pipeline_using _SCM](008_Pipeline_using _SCM/README.md)
+[008_Pipeline_using_SCM](008_Pipeline_using_SCM/README.md)
 
 [009_Post_Actions](009_Post_Actions/README.md)
 
