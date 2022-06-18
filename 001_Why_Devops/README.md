@@ -1,5 +1,7 @@
 ### What is Devops and Why it is important?
 
+Devops is a culture, philosophy, set of practices or processes followed with the help of special tools. It aims to enhance or streamline organization's ability to deliver applications.
+
 ![Devops](/images/devops.png)
 
 <p align="center">
