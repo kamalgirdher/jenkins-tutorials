@@ -16,39 +16,49 @@ Though, a little knowledge of git/github would be good. I therefore recommend to
 
 ## Content
 
-[Tutorial 1. Jenkins installation](/Tutorial_01/README.md)
+[001_Why_Devops](001_Why_Devops/README.md)
 
-[Tutorial 2. Github account, github plugin, github token](/Tutorial_02/README.md)
+[002_Course_Introduction](002_Course_Introduction/README.md)
 
-[Tutorial 3. Pipeline using Pipeline script](/Tutorial_03/README.md)
+[003_Jenkins_Installation(Windows)](003_Jenkins_Installation(Windows)/README.md)
 
-[Tutorial 4. JENKINSFILE using SCM](/Tutorial_04/README.md)
+[004_Jenkins_Installation(Ubuntu)](004_Jenkins_Installation(Ubuntu)/README.md)
 
-[Tutorial 5. Pipeline with post actions](/Tutorial_05/README.md)
+[005_Freestyle_vs_Pipelines](005_Freestyle_vs_Pipelines/README.md)
 
-[Tutorial 6. Multiple Stages](/Tutorial_06/README.md)
+[006_Declarative_vs_Scripted](006_Declarative_vs_Scripted/README.md)
 
-[Tutorial 7. Blue ocean](/Tutorial_07/README.md)
+[007_First_pipeline_using_Pipeline_script](007_First_pipeline_using_Pipeline_script/README.md)
 
-[Tutorial 8. Parallel steps in a stage](/Tutorial_08/README.md)
+[008_Pipeline_using _SCM](008_Pipeline_using _SCM/README.md)
 
-[Tutorial 9. Virtual Machine agent](/Tutorial_09/README.md)
+[009_Post_Actions](009_Post_Actions/README.md)
 
-[Tutorial 10. Docker agent](/Tutorial10/README.md)
+[010_Multiple_Stages](010_Multiple_Stages/README.md)
 
+[011_Blue_Ocean](011_Blue_Ocean/README.md)
 
-Environment
+[012_Parallel_Stages](012_Parallel_Stages/README.md)
 
-Triggers
-Flow control if else
-Try catch
-When
-AllOf AnyOf
-Docker agent
-Sequential Stages
-Axis
+[013_Sequential_Stages](013_Sequential_Stages/README.md)
 
+[014_Environment_Variables](014_Environment_Variables/README.md)
 
+[015_Options_Directive](015_Options_Directive/README.md)
+
+[016_Parameters](016_Parameters/README.md)
+
+[017_When_Block](017_When_Block/README.md)
+
+[018_Flow_Control_If_Else_Try_Catch](018_Flow_Control_If_Else_Try_Catch/README.md)
+
+[019_Shared_Global_Libraries](019_Shared_Global_Libraries/README.md)
+
+[020_Virtual_Machine_Agent](020_Virtual_Machine_Agent/README.md)
+
+[021_Docker_Agent](021_Docker_Agent/README.md)
+
+[022_AWS_Agent](022_AWS_Agent/README.md)
 
 
 <p align="center">
@@ -70,5 +80,3 @@ https://www.linkedin.com/in/kamal-girdher-08691932/
 http://megettingerror.blogspot.in/
 
 http://exceltalk.blogspot.in/
-
-xxxxxxxxx
