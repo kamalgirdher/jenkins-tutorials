@@ -8,7 +8,7 @@ pipeline {
     }
     stages {
         stage('one') {
-            when {s
+            when {
                 environment name: 'abc', value : 'HELLO'
             }
             steps {

@@ -1,6 +1,15 @@
 # Tutorial 10. Docker on VM(ubuntu) agent
 
-## Docker installation
+*Case  - Jenkins on local --> Docker on local*
+
+*Case - Jenkins on VM --> Docker on VM*
+
+*Case  - Jenkins on local  -->  VM on Virtualbox  --> Docker on VM*
+
+*Case  - Jenkins and Docker on remote hosts*
+
+
+## Docker installation on Ubuntu
 
 We are having a Windows machine on which we hosted Jenkins. We created an ubuntu VM on virtualbox. Now we are installing docker on that VM. Our target is to create an agent using docker. Let's first see installation of docker on ubuntu.
 
@@ -13,7 +22,6 @@ For more details, you may check the instructions here: https://docs.docker.com/e
 
 
 ## Docker image using Dockerfile
-
 Now let's create a simple Hello World application and host it using nginx. We are threfore using nginx alpine base image and putting a simple HTML page on it.
 
 First create a file and name it as Dockerfile.
@@ -122,6 +130,40 @@ As we use docker run, it launches a container "hello" from the image "kamal". An
 </p>
 
 And when we open <VM IP>:80 (eg. 192.168.29.119:80) from our root machine(Windows in our case), it opens the HTML page (index.html) with "Here we go..." text appended after Hello message.
+
+
+
+Docker settings on Ubuntu
+
+```
+sudo systemctl edit docker.service
+```
+
+Update 127.0.0.1 to 0.0.0.0
+
+```
+[Service]
+ExecStart=
+ExecStart=/usr/bin/dockerd -H fd:// -H tcp://0.0.0.0:2375
+```
+
+Reload Daemon
+```
+sudo systemctl daemon-reload
+```
+
+
+Restart docker service
+```
+sudo systemctl restart docker.service
+```
+
+
+
+
+
+
+
 
 <p align="center">
     <img src="/images/helloNginxApp.png" width="40%" height="40%">
