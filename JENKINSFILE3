@@ -8,7 +8,7 @@ pipeline {
         }
         stage('build') {
             steps {
-                bat 'echo Build in progress.'
+                bat 'echo Build in progress...'
             }
         }
         stage('Unit tests') {
